@@ -1,0 +1,266 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    direction: rtl;
+    text-align: right;
+    background-color: #f6f7fa;
+    padding-top: 46px;
+    margin: 0;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* منوی سایت */
+.navBar {
+    overflow: hidden;
+    background-color: #13142f;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.navBar button {
+    background-color: inherit;
+    float: right;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+}
+.navBar button:hover {
+    background-color: #dddddda3;
+    color: #13142f;
+}
+.navBar button.active {
+    background-color: #dddddda3;
+    color: #13142f;
+}
+.navContent {
+    display: none;
+    padding: 12px;
+    border-top: none;
+}
+/* هدر سایت */
+header>img{
+    width: 100%;
+}
+/* وبلاگ */
+.coming-soon{
+    text-align: center;
+    direction: ltr;
+    height: 40px;
+    font-size: 50px;
+    margin: 5%;
+}
+/* اطلاعات املاک */
+.title-house{
+    text-align: center;
+    color: #13142f;
+    font-size: 1.2857em;
+    line-height: 2;
+    margin-top: 20px;
+}
+.card{
+    background-color: #fff;
+    width: 330px;
+    height: 290px;
+    border-radius: 10px;
+    margin: 0 0 28px 28px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.card:hover{
+    box-shadow: 0 8px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.card-small{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 330px;
+    height: 160px;
+}
+.meterage-small, .area-small, .seller-small{
+    margin-top: 10px;
+    text-align: right;
+    padding-right: 16px;
+}
+/* فوتر */
+.footer{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 12px 25px;
+    border-top: 1px solid #ccc;
+    background-color: #13142f;
+}
+.footer-address {
+    margin-top: 10px;
+    margin-right: 15px;
+}
+.contact-call{
+    align-items: center;
+    margin-right: 15px;
+    color: #ffffff;
+    font-size: 1em;
+    line-height: 1;
+    font-weight: 400;
+    margin-bottom: 10px;
+    width: 50%;
+}
+.footer-call{
+    margin-right: 15px;
+}
+.footer-call>p{
+    color: #ffffff;
+    font-size: 17px;
+    line-height: 1;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.footer-list li {
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+.footer-list li a{
+    margin-bottom: 8px;
+    color: #ffffff;
+    text-decoration: none;
+}
+.title-widget{
+    color: #ffffff;
+    font-size: 1.2857em;
+    line-height: 2;
+    margin: 20px 0px 30px 0px;
+}
+/* کپی رایت */
+.footer-bottom{
+    text-align: center;
+    border-top: 1px solid #545454;
+    padding-bottom: 5px;
+    background-color: #13142f;
+    color: #ffffff;
+}
+/* درباره ما */
+.title {
+    margin-right: 25%;
+    width: fit-content;
+    text-align: center;
+    height: 30px;
+}
+.about-us{
+    display: flex;
+    flex-wrap: wrap;
+}
+.about-us-image{
+    text-align: center;
+    width: 48%;
+    margin-bottom: 20px;
+}
+.about-us-image>img{
+    width: 50%;
+    border-radius: 100% 50% 50% 100%/75% 69% 69% 75%;
+}
+.about-us-info{
+    text-align: center;
+    width: 48%;
+    padding: 2%;
+}
+.skill{
+    margin-bottom: 6px;
+    margin-top: 13px;
+    display: flex;
+    flex-wrap: wrap;
+}
+b{
+    font-size: 17px;
+}
+.progress {
+    border: 1px solid #B0B0B0;
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 0 3px #B0B0;
+    backdrop-filter: blur(2px) brightness(101%);
+}
+.bar {
+    box-shadow: inset 0px 12px 1.7px #FFFFFF33;
+    border-radius: 3px;
+    color: white;
+}
+.bar.wordpress {
+    background: #13142f;
+    width:70%;
+}
+.bar.js {
+    background: #13142f;
+    width: 40%;
+}
+.bar.css {
+    background: #13142f;
+    width: 80%;
+}
+/* تماس با ما */
+.contact-info{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0px 20px 0px;
+}
+.contact-title{
+    text-align: center;
+}
+.contact-image {
+    width: 30%;
+}
+.contact-info-text{
+    width: calc(48% - 7px);;
+    padding-right: 20px;
+}
+.contact-info-text ul li {
+    border-bottom: 1px solid #13142f;
+}
+.contact-info-text ul li:last-child {
+    border-bottom: none;
+}
+.contact-info-text ul li .contact-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.contact-info-text ul li .contact-title h4 {
+    margin-bottom: 0;
+}
+.form-info{
+    width: calc(48% - 7px);;
+    margin-right: 1%;
+    border: 1px solid rgb(227, 227, 227);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2);
+}
+.contact-info-image{
+    text-align: center;
+}
+.form-details {
+    padding: 20px 50px 20px 20px;
+    display: grid;
+}
+input, textarea, .form-details>button {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #a6a6a6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 90%;
+}
+.form-details>button{
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+.form-details button:hover{
+    background-color: #ccc;
+}
+

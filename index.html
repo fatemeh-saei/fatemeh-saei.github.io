@@ -3,17 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>پروژه نهایی آمانج</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="navBar">
-        <button type="button" class="navButton" id="navButton"> Home </button>
-        <button type="button" class="navButton" id="navButton"> About me </button>
-        <button type="button" class="navButton" id="navButton"> Contact </button>
-        <button type="button" class="navButton" id="navButton"> Blog </button>
-    </div>
-    <div>
-        hiii
+    <div class="main">
+        <!-- منوی سایت -->
+        <div class="navBar">
+            <button class="navButton" onclick="hide(event, 'homePage');"> صفحه اصلی </button>
+            <button class="navButton" onclick="hide(event, 'NewAd');"> ثبت آگهی </button>
+            <button class="navButton" onclick="hide(event, 'aboutUs');"> درباره ما </button>
+            <button class="navButton" onclick="hide(event, 'contactUs');"> تماس با ما </button>
+            <button class="navButton" onclick="hide(event, 'blog');"> وبلاگ </button>
+        </div>
+        <header>
+            <img src="images/header.jpg" alt="header">
+        </header>
+        <!-- صفحه اصلی -->
+        <div class="navContent" style="display: block;" id="homePage">
+            <h6 class="title-house"> ---------------- موجودی املاک ---------------- </h6>
+            <div id="container" class="container"></div>
+        </div>
+        <!-- ثبت آگهی -->
+        <div class="navContent" id="NewAd">
+            ایجاد آگهی جدید
+        </div>
+        <!-- درباره ما -->
+        <div class="navContent" id="aboutUs">
+            <div class="about-us">
+                <div class="about-us-image">
+                    <h3 id="title" class="title"></h3>
+                    <img src="images/saei.jpg" alt="about us">
+                </div>
+                <div class="about-us-info">
+                    <div class="skill"><b> وردپرس </b></div>
+                    <div class="progress">
+                        <div class="bar wordpress"> 70% </div>
+                    </div>
+                    <div class="skill"><b> جاوااسکریپت </b></div>
+                    <div class="progress">
+                        <div class="bar js"> 40% </div>
+                    </div>
+                    <div class="skill"><b> Html & Css </b></div>
+                    <div class="progress">
+                        <div class="bar css"> 80% </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- تماس با ما -->
+        <div class="navContent" id="contactUs">
+            <div class="contact-info">
+                <div class="contact-info-text">
+                    <div class="contact-title">
+                        <h3> راه‌های ارتباطی </h3>
+                    </div>
+                    <ul>
+                        <li>
+                            <div class="contact-title">
+                                <h4> آدرس: </h4>
+                            </div>
+                            <p> تهران، خیابان پانزده خرداد غربی </p>
+                        </li>
+                        <li>
+                            <div class="contact-title">
+                                <h4> شماره تماس: </h4>
+                            </div>
+                            <p>تلفن همراه: 09370379599</p>
+                        </li>
+                        <li>
+                            <div class="contact-title">
+                                <h4> ایمیل: </h4>
+                            </div>
+                            <p>fsaee1380@gmail.com</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="form-info">
+                    <div class="contact-info-image">
+                        <img class="contact-image" src="images/contact.png" alt="about us">
+                    </div>
+                    <div class="form-details">
+                        <input type="text" name="name" id="name" placeholder="نام و نام خانولدگی" required>
+                        <input type="email" name="email" id="email" placeholder="ایمیل" required>
+                        <textarea name="message" id="message" cols="52" rows="7" placeholder="متن پیام" required></textarea>
+                        <button>ارسال</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- وبلاگ -->
+        <div class="navContent blog" id="blog">
+            <h1 id="coming-soon" class="coming-soon"></h1>
+        </div>
+        <!-- فوتر -->
+        <div class="footer">
+            <div class="contact-call">
+                <h6 class="title-widget">اطلاعات تماس</h6>
+                <div class="footer-call">
+                    <p>شماره تماس:</p>
+                    <p>09370379599</p>
+                </div>
+                <div class="footer-address">
+                    <p>تهران - مرکز</p>
+                    <p>fsaee1380@gmail.com</p>
+                </div>
+            </div>
+            <div class="widget-footer">
+                <h6 class="title-widget"> دسترسی سریع </h6>
+                <ul class="footer-list">
+                    <li><a href="">درباره ما</a></li>
+                    <li><a href="">تماس با ما</a></li>
+                    <li><a href="">وبلاگ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright-text"> تمامی حقوق این وبسایت برای فاطمه ساعی محفوظ است. </p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
