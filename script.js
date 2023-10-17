@@ -101,7 +101,6 @@ setInterval(()=>{
         showCursor = true;
     }
 }, 300)
-
 // کدهای مربوط به وبلاگ
 const text1 = document.getElementById("coming-soon");
 const words1 = ["Coming Soon..."];
@@ -115,10 +114,29 @@ function textload1(){
         if (wordIndex1 === words1.length){
             wordIndex1 = 0;
         }
-        index1 = 0;
-        text1.textContent = "";
+        setTimeout(function(){
+            index1 = 0;
+            text1.textContent = "";
+        }, 1000)    
     }
     index1++;
     const timer = setTimeout(textload1, 200)
+    
 }
 textload1();
+// کدهای مربوط به اسکرول
+let mybutton = document.getElementById("myBtn");
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+function topFunction() {
+    setTimeout(function(){
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }, 200)
+}

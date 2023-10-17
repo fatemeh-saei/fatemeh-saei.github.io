@@ -1,5 +1,25 @@
+@font-face {
+    font-family: Vazir;
+    font-style: normal;
+    font-weight: normal;
+    src: url('fonts/Vazir.eot');
+    src: url('fonts/Vazir.eot?#iefix') format('embedded-opentype'), 
+    url('fonts/Vazir.woff2') format('woff2'), 
+    url('fonts/Vazir.woff') format('woff'), 
+    url('fonts/Vazir.ttf') format('truetype');
+}
+@font-face {
+    font-family: Vazir;
+    font-style: normal;
+    font-weight: bold;
+    src: url('fonts/Vazir-Bold.eot');
+    src: url('fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'), 
+    url('fonts/Vazir-Bold.woff2') format('woff2'), 
+    url('fonts/Vazir-Bold.woff') format('woff'), 
+    url('fonts/Vazir-Bold.ttf') format('truetype');
+}
 *{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Vazir;
 }
 body{
     direction: rtl;
@@ -22,7 +42,7 @@ body{
     z-index: 1000;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: right;
 }
 .navBar button {
     background-color: inherit;
@@ -224,8 +244,6 @@ b{
     margin-bottom: 0;
 }
 .form-info{
-    width: calc(98% - 10px);;
-    margin-right: 1%;
     border: 1px solid rgb(227, 227, 227);
     border-radius: 8px;
     box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2);
@@ -244,7 +262,6 @@ input, textarea, .form-details>button {
     border-radius: 8px;
     border: 1px solid #a6a6a6;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 99%;
 }
 .form-details>button{
     cursor: pointer;
@@ -254,4 +271,22 @@ input, textarea, .form-details>button {
 .form-details button:hover{
     background-color: #ccc;
 }
-
+/* اسکرول به بالا */
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 30px;
+    z-index: 99;
+    font-size: 30px;
+    border: 2px solid #13142f;
+    background-color: #dddddda3;
+    color: #13142f;
+    cursor: pointer;
+    border-radius: 4px;
+    min-width: 3%;
+    padding-top: 10px;
+}
+#myBtn:hover {
+    background-color: #7d7d7d;
+}
