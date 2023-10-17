@@ -11,6 +11,7 @@ body{
 .container{
     display: flex;
     flex-wrap: wrap;
+    padding-right: 25px;
 }
 /* منوی سایت */
 .navBar {
@@ -144,7 +145,7 @@ header>img{
 }
 /* درباره ما */
 .title {
-    margin-right: 25%;
+    margin-right: 5%;
     width: fit-content;
     text-align: center;
     height: 30px;
@@ -203,12 +204,10 @@ b{
 /* تماس با ما */
 .contact-info{
     margin: 20px 0px 20px 0px;
+    text-align: -webkit-center;
 }
 .contact-image {
     width: 20%;
-}
-.contact-title{
-    text-align: center;
 }
 .contact-info-text ul li {
     border-bottom: 1px solid #13142f;
@@ -230,6 +229,7 @@ b{
     border: 1px solid rgb(227, 227, 227);
     border-radius: 8px;
     box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2);
+    width: 70%;
 }
 .contact-info-image{
     text-align: center;
