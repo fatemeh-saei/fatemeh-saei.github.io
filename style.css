@@ -258,7 +258,7 @@ b{
 }
 input, textarea, .form-details>button {
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 6%;
     border-radius: 8px;
     border: 1px solid #a6a6a6;
 }
