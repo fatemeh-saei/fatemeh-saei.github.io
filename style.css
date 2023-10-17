@@ -205,18 +205,16 @@ b{
 }
 /* تماس با ما */
 .contact-info{
-    display: flex;
-    flex-wrap: wrap;
     margin: 20px 0px 20px 0px;
 }
 .contact-title{
     text-align: center;
 }
 .contact-image {
-    width: 30%;
+    width: 20%;
 }
 .contact-info-text{
-    width: calc(48% - 7px);;
+    width: calc(100% - 10px);;
     padding-right: 20px;
 }
 .contact-info-text ul li {
@@ -234,7 +232,7 @@ b{
     margin-bottom: 0;
 }
 .form-info{
-    width: calc(48% - 7px);;
+    width: calc(98% - 10px);;
     margin-right: 1%;
     border: 1px solid rgb(227, 227, 227);
     border-radius: 8px;
@@ -244,7 +242,7 @@ b{
     text-align: center;
 }
 .form-details {
-    padding: 20px 50px 20px 20px;
+    padding: 20px 50px 20px 50px;
     display: grid;
 }
 input, textarea, .form-details>button {
@@ -253,7 +251,7 @@ input, textarea, .form-details>button {
     border-radius: 8px;
     border: 1px solid #a6a6a6;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 90%;
+    width: 99%;
 }
 .form-details>button{
     cursor: pointer;
