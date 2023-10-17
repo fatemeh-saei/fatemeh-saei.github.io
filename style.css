@@ -253,12 +253,12 @@ b{
     text-align: center;
 }
 .form-details {
-    padding: 20px 50px 20px 50px;
+    padding: 6%;
     display: grid;
 }
 input, textarea, .form-details>button {
     margin-bottom: 10px;
-    padding: 6%;
+    padding: 10px;
     border-radius: 8px;
     border: 1px solid #a6a6a6;
 }
