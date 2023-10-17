@@ -261,7 +261,6 @@ input, textarea, .form-details>button {
     padding: 10px;
     border-radius: 8px;
     border: 1px solid #a6a6a6;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .form-details>button{
     cursor: pointer;
