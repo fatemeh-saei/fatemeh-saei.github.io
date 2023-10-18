@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>پروژه نهایی آمانج</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
     <div class="main">
-        <!-- منوی سایت -->
+        <!-- هدر سایت -->
         <div class="navBar">
             <button class="navButton" onclick="hide(event, 'homePage');"> صفحه اصلی </button>
             <button class="navButton" onclick="hide(event, 'NewAd');"> ثبت آگهی </button>
@@ -21,8 +22,13 @@
         </header>
         <!-- صفحه اصلی -->
         <div class="navContent" style="display: block;" id="homePage">
-            <h6 class="title-house"> ---- موجودی املاک ---- </h6>
-            <div id="container" class="container"></div>
+            <h6 class="title-house"> ---- اطلاعات املاک ---- </h6>
+            <div class="main-section row">
+                <div class="sidebar-right col-3" id="sidebar-right">
+                    <h6 class="title-filter"> فیلتر بر اساس منطقه </h6>
+                </div>
+                <div id="container" class="container col-9"></div>
+            </div>
         </div>
         <!-- ثبت آگهی -->
         <div class="navContent" id="NewAd">
@@ -37,15 +43,15 @@
                 </div>
                 <div class="about-us-info">
                     <div class="skill"><b> وردپرس </b></div>
-                    <div class="progress">
+                    <div class="toolbar">
                         <div class="bar wordpress"> 70% </div>
                     </div>
                     <div class="skill"><b> جاوااسکریپت </b></div>
-                    <div class="progress">
+                    <div class="toolbar">
                         <div class="bar js"> 40% </div>
                     </div>
                     <div class="skill"><b> Html & Css </b></div>
-                    <div class="progress">
+                    <div class="toolbar">
                         <div class="bar css"> 80% </div>
                     </div>
                 </div>
@@ -62,7 +68,7 @@
                         <img class="contact-image" src="images/contact.png" alt="about us">
                     </div>
                     <div class="form-details">
-                        <input type="text" name="name" id="name" placeholder="نام و نام خانولدگی" required>
+                        <input type="text" name="name" id="name" placeholder="نام و نام خانوادگی" required>
                         <input type="email" name="email" id="email" placeholder="ایمیل" required>
                         <textarea name="message" id="message" cols="52" rows="7" placeholder="متن پیام" required></textarea>
                         <button>ارسال</button>
@@ -75,8 +81,8 @@
             <h1 id="coming-soon" class="coming-soon"></h1>
         </div>
         <!-- فوتر -->
-        <div class="footer">
-            <div class="contact-call">
+        <div class="footer row">
+            <div class="contact-call col">
                 <h6 class="title-widget">اطلاعات تماس</h6>
                 <div class="footer-call">
                     <p>شماره تماس:</p>
@@ -91,7 +97,7 @@
                     <p>تهران، پانزده خرداد غربی</p>
                 </div>
             </div>
-            <div class="widget-footer">
+            <div class="widget-footer col">
                 <h6 class="title-widget"> دسترسی سریع </h6>
                 <ul class="footer-list">
                     <li><a href="">درباره ما</a></li>
@@ -106,5 +112,8 @@
         <button onclick="topFunction()" id="myBtn"> ^ </button>
     </div>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
 </html>

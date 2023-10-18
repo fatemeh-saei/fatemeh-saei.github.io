@@ -21,17 +21,27 @@
 *{
     font-family: Vazir;
 }
+main{
+    width: 100%;
+}
 body{
     direction: rtl;
     text-align: right;
-    background-color: #f6f7fa;
-    padding-top: 46px;
+    background-color: #f6f7fa !important;
+    padding-top: 60px;
     margin: 0;
+}
+.main-section{
+    display: flex;
+    flex-wrap: wrap;
 }
 .container{
     display: flex;
     flex-wrap: wrap;
-    padding-right: 10px;
+}
+div#container {
+    width: calc(75% - 20px) !important;
+    margin-left: 0.5%;
 }
 /* منوی سایت */
 .navBar {
@@ -43,6 +53,7 @@ body{
     width: 100%;
     display: flex;
     justify-content: right;
+    height: 60px;
 }
 .navBar button {
     background-color: inherit;
@@ -69,6 +80,76 @@ body{
     padding: 12px;
     border-top: none;
 }
+/* سایدبار راست و فیلتر */
+.sidebar-right{
+    min-width: calc(20% - 20px) !important;
+    border: 1px solid rgb(227, 227, 227);
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    height: fit-content;
+    text-align: center;
+    margin-right: 0.5%;
+}
+.title-filter{
+    text-align: center;
+    color: #13142f;
+    font-size: 1rem;
+    margin: 20px;
+    font-weight: bold !important;
+    border-bottom: 1px solid #13142f;
+    padding-bottom: 10px;
+}
+.right-filter-container .range-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.right-filter-container{
+    padding: 0.5em;
+    font-size: 14px;
+    display: flex;
+}
+.right-filter-container a {
+    text-decoration: none;
+    color:#333;
+}
+.right-filter-container input[type="radio"]{
+    width: 1% !important;
+    border-radius: 50px !important;
+    appearance: none;
+    border: 2px solid #13142f;
+    vertical-align: middle;
+    position: relative;
+    margin-left: 3%;
+}
+.right-filter-container input[type="radio"]:checked::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 0;
+    background-color: #13142f;
+}
+.filter-Label{
+    font-size: 16px;
+    font-weight: bold;
+    color: #13142f;
+}
+.filter-button{
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+    padding: 10px !important;
+    border-radius: 8px !important;
+    border: 0.5px solid #a6a6a6;
+    min-width: 50% !important;
+    font-weight: bold;
+}
+.filter-button:hover{
+    background-color: #ccc;
+}
 /* هدر سایت */
 header>img{
     width: 100%;
@@ -80,6 +161,7 @@ header>img{
     height: 40px;
     font-size: 30px;
     margin: 5%;
+    font-weight: 800;
 }
 /* اطلاعات املاک */
 .title-house{
@@ -87,13 +169,14 @@ header>img{
     color: #13142f;
     font-size: 1.2857em;
     line-height: 2;
-    margin-top: 20px;
+    margin: 20px;
+    font-weight: 600 !important;
 }
 .card{
     background-color: #fff;
-    width: 330px;
-    height: 290px;
-    border-radius: 10px;
+    width: 330px !important;    
+    height: 290px !important;
+    border-radius: 10px !important;
     margin: 0 0 28px 28px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -103,21 +186,21 @@ header>img{
 .card-small{
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    width: 330px;
+    width: 100%;
     height: 160px;
 }
 .meterage-small, .area-small, .seller-small{
     margin-top: 10px;
     text-align: right;
-    padding-right: 16px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 /* فوتر */
 .footer{
-    display: flex;
-    flex-wrap: wrap;
     padding: 12px 25px;
     border-top: 1px solid #ccc;
     background-color: #13142f;
+    width: 100% !important;
 }
 .footer-address, .footer-email, .footer-call {
     margin-top: 10px;
@@ -131,7 +214,6 @@ header>img{
     line-height: 1;
     font-weight: 400;
     margin-bottom: 10px;
-    width: 50%;
 }
 .footer-call>p{
     color: #ffffff;
@@ -154,6 +236,7 @@ header>img{
     font-size: 1.2857em;
     line-height: 2;
     margin: 20px 0px 30px 0px;
+    font-weight: 600 !important;
 }
 /* کپی رایت */
 .footer-bottom{
@@ -162,6 +245,7 @@ header>img{
     padding-bottom: 5px;
     background-color: #13142f;
     color: #ffffff;
+    width: 100% !important;
 }
 /* درباره ما */
 .title {
@@ -170,9 +254,8 @@ header>img{
     text-align: center;
     height: 30px;
 }
-.about-us{
+.about-us {
     display: flex;
-    flex-wrap: wrap;
 }
 .about-us-image{
     text-align: center;
@@ -189,29 +272,29 @@ header>img{
     padding: 2%;
 }
 .skill{
-    margin-bottom: 6px;
-    margin-top: 13px;
-    display: flex;
-    flex-wrap: wrap;
+    margin-bottom: 6px !important;
+    margin-top: 13px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
 }
 b{
-    font-size: 17px;
+    font-size: 17px !important;
 }
-.progress {
-    border: 1px solid #B0B0B0;
-    width: 100%;
-    border-radius: 4px;
-    box-shadow: 0 0 3px #B0B0;
-    backdrop-filter: blur(2px) brightness(101%);
+.toolbar {
+    border: 1px solid #B0B0B0 !important;
+    width: 100% !important;
+    border-radius: 4px !important;
+    box-shadow: 0 0 3px #B0B0 !important;
+    backdrop-filter: blur(2px) brightness(101%) !important;
 }
 .bar {
-    box-shadow: inset 0px 12px 1.7px #FFFFFF33;
-    border-radius: 3px;
-    color: white;
+    box-shadow: inset 0px 12px 1.7px #FFFFFF33 !important;
+    border-radius: 3px !important;
+    color: white !important;
 }
 .bar.wordpress {
-    background: #13142f;
-    width:70%;
+    background: #13142f !important;
+    width:70% !important;
 }
 .bar.js {
     background: #13142f;
@@ -223,11 +306,17 @@ b{
 }
 /* تماس با ما */
 .contact-info{
-    margin: 20px 0px 20px 0px;
+    margin: 20px 0px 20px 0px !important;
     text-align: -webkit-center;
 }
+h3 {
+    font-size: 1.17em !important;
+    font-weight: bold !important;
+    margin-bottom: 1.5rem !important;
+}
 .contact-image {
-    width: 20%;
+    width: 30% !important;
+    padding-top: 20px;
 }
 .contact-info-text ul li {
     border-bottom: 1px solid #13142f;
@@ -253,14 +342,15 @@ b{
     text-align: center;
 }
 .form-details {
-    padding: 6%;
+    padding: 3%;
     display: grid;
 }
-input, textarea, .form-details>button {
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 8px;
+input, textarea, .form-details>button{
+    margin-bottom: 10px !important;
+    padding: 10px !important;
+    border-radius: 8px !important;
     border: 1px solid #a6a6a6;
+    width: 100% !important;
 }
 .form-details>button{
     cursor: pointer;
@@ -283,9 +373,16 @@ input, textarea, .form-details>button {
     color: #13142f;
     cursor: pointer;
     border-radius: 4px;
-    min-width: 3%;
+    min-width: 4%;
     padding-top: 10px;
 }
-#myBtn:hover {
+#myBtn:hover{
     background-color: #7d7d7d;
+}
+p{
+    margin-bottom: 1rem;
+    margin-top: 1rem !important;
+}
+.row{
+    --bs-gutter-x: 0 !important;
 }

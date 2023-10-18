@@ -28,7 +28,13 @@ const houses = [
         meterage: 90,
         area: "قیطریه",
         seller: "مرتضوی 09370379599"
-    }       
+    },
+    {
+        image: "6.jpg",
+        meterage: 40,
+        area: "منیریه",
+        seller: "جلیلی 09370379599"
+    }      
 ]
 // کدهای مربوط به بخش منوی سایت
 function hide(evt, divName) {
@@ -72,6 +78,29 @@ function render(){
     });
 }
 render();
+// کدهای مربوط به نمایش مناطق در فیلتر
+const filterarea = document.getElementById("sidebar-right");
+function renderArea(){
+    houses.forEach(area=>{
+        const filterDiv = document.createElement("div");
+        filterDiv.className = "right-filter-container";
+        filterarea.appendChild(filterDiv);
+        const filterSelect = document.createElement("input");
+        filterSelect.type = "radio";
+        filterSelect.name = "drone"
+        filterDiv.appendChild(filterSelect);
+        const filterLabel = document.createElement("label");
+        filterLabel.className = "filter-Label";
+        filterLabel.textContent = area.area;
+        filterDiv.appendChild(filterLabel);
+    });
+    const filterButton = document.createElement("button");
+    filterButton.type = "button";
+    filterButton.className = "filter-button";
+    filterButton.textContent = "اعمال فیلتر"
+    filterarea.appendChild(filterButton);
+}
+renderArea();
 // کدهای مربوط به نمایش نام در صفحه درباره ما
 const text = document.getElementById("title");
 const words = ["فاطمه دستمالچی ساعی"];
