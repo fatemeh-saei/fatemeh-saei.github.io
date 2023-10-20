@@ -217,7 +217,7 @@ header>img{
 .card{
     background-color: #fff;
     width: 330px !important;    
-    height: 310px !important;
+    min-height: 310px !important;
     border-radius: 10px !important;
     margin: 0 0 28px 28px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
