@@ -104,8 +104,6 @@ function renderArea(){
         filterLabel.textContent = area.area;
         filterDiv.appendChild(filterLabel);
     });
-    
-    
     const filterButton = document.createElement("button");
     filterButton.type = "button";
     filterButton.className = "filter-button";
@@ -161,7 +159,6 @@ function topFunction() {
 // کدهای مربوط به منوی آکاردئون در وبلاگ
 let acc = document.querySelectorAll(".accordion");
 let i;
-
 for (i=0; i<acc.length; i++) {
     acc[i].addEventListener("click", function(){
         this.classList.toggle("active1");
