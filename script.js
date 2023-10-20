@@ -3,38 +3,44 @@ const houses = [
         image: "1.jpg",
         meterage: 200,
         area: "ستارخان",
-        seller: "محمدی 09370379599"
+        sellerName: "محمدی",
+        sellerPhone: "09370379599"
     },
     {
         image: "2.jpg",
         meterage: 74,
         area: "ونک",
-        seller: "عباسی 09370379599"
+        sellerName: "عباسی",
+        sellerPhone: "09370379599"
     },
     {
         image: "3.jpg",
         meterage: 130,
         area: "زعفرانیه",
-        seller: "احمدی 09370379599"
+        sellerName: "احمدی",
+        sellerPhone: "09370379599"
     },
     {
         image: "4.jpg",
         meterage: 1050,
         area: "سعادت آباد",
-        seller: "ساعی 09370379599"
+        sellerName: "ساعی",
+        sellerPhone: "09370379599"
     },
     {
         image: "5.jpg",
         meterage: 90,
         area: "قیطریه",
-        seller: "مرتضوی 09370379599"
+        sellerName: "مرتضوی",
+        sellerPhone: "09370379599"
     },
     {
         image: "6.jpg",
         meterage: 40,
         area: "منیریه",
-        seller: "جلیلی 09370379599"
-    }      
+        sellerName: "جلیلی",
+        sellerPhone: "09370379599"
+    }    
 ]
 // کدهای مربوط به بخش منوی سایت
 function hide(evt, divName) {
@@ -71,10 +77,14 @@ function render(){
         meterageDive.className = "meterage-small";
         meterageDive.textContent = `متراژ: ${house.meterage} متر`;
         cardDive.appendChild(meterageDive);
-        const sellerDive = document.createElement("div");
-        sellerDive.className = "seller-small";
-        sellerDive.textContent = `اطلاعات فروشنده: ${house.seller}`;
-        cardDive.appendChild(sellerDive);
+        const sellerNameDive = document.createElement("div");
+        sellerNameDive.className = "seller-small";
+        sellerNameDive.textContent = `نام فروشنده: ${house.sellerName}`;
+        cardDive.appendChild(sellerNameDive);
+        const sellerPhoneDiv = document.createElement("div");
+        sellerPhoneDiv.className = "seller-small";
+        sellerPhoneDiv.textContent = `شماره تماس فروشنده: ${house.sellerPhone}`;
+        cardDive.appendChild(sellerPhoneDiv);
     });
 }
 render();
@@ -94,6 +104,8 @@ function renderArea(){
         filterLabel.textContent = area.area;
         filterDiv.appendChild(filterLabel);
     });
+    
+    
     const filterButton = document.createElement("button");
     filterButton.type = "button";
     filterButton.className = "filter-button";
@@ -130,29 +142,6 @@ setInterval(()=>{
         showCursor = true;
     }
 }, 300)
-// کدهای مربوط به وبلاگ
-const text1 = document.getElementById("coming-soon");
-const words1 = ["Coming Soon..."];
-let wordIndex1 =0;
-let index1 = 0;
-let showCursor1 = true;
-function textload1(){
-    text1.textContent = words1[wordIndex1].substring(0, index1);
-    if (index1 > words1[wordIndex1].length){
-        wordIndex1 +=1;
-        if (wordIndex1 === words1.length){
-            wordIndex1 = 0;
-        }
-        setTimeout(function(){
-            index1 = 0;
-            text1.textContent = "";
-        }, 1000)    
-    }
-    index1++;
-    const timer = setTimeout(textload1, 200)
-    
-}
-textload1();
 // کدهای مربوط به اسکرول
 let mybutton = document.getElementById("myBtn");
 window.onscroll = function() {scrollFunction()};
@@ -168,4 +157,19 @@ function topFunction() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     }, 200)
+}
+// کدهای مربوط به منوی آکاردئون در وبلاگ
+let acc = document.querySelectorAll(".accordion");
+let i;
+
+for (i=0; i<acc.length; i++) {
+    acc[i].addEventListener("click", function(){
+        this.classList.toggle("active1");
+        let panel = this.nextElementSibling;
+        if(panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        }else{
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
 }

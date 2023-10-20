@@ -155,13 +155,55 @@ header>img{
     width: 100%;
 }
 /* وبلاگ */
-.coming-soon{
-    text-align: center;
-    direction: ltr;
-    height: 40px;
-    font-size: 30px;
-    margin: 5%;
-    font-weight: 800;
+.accordion{
+    background-color: #dddddda3;
+    color: #13142f;
+    cursor: pointer;
+    padding: 1rem;
+    width: 100%;
+    border: 1px solid #13142f;
+    text-align: right;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.1s ease-out;
+}
+.accordion:first-child{
+    border-radius: 10px 10px 0 0;
+}
+.accordion-content:nth-last-child(1){
+    border-bottom: 1px solid #13142f;
+}
+.active1,.accordion:hover{
+    background-color: #13142f;
+    color: white;
+}
+.accordion:after{
+    content: "\002B";
+    font-weight: bold;
+    float: right;
+    margin-left: 0.5rem;
+}
+.active1:after{
+    content: "\2212";
+    color: white;
+}
+.accordion-content{
+    padding: 0 1rem;
+    color: #13142f;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border-right: 1px solid #13142f;
+    border-left: 1px solid #13142f;
+    text-align: justify;
+}
+.accordion-content ul{
+    list-style-type: circle;
+    margin: 1rem 0;
+    padding: 0.2rem;
+}
+.accordion-content ul li{
+    padding: 0.2rem 0;
 }
 /* اطلاعات املاک */
 .title-house{
@@ -175,7 +217,7 @@ header>img{
 .card{
     background-color: #fff;
     width: 330px !important;    
-    height: 290px !important;
+    height: 310px !important;
     border-radius: 10px !important;
     margin: 0 0 28px 28px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -386,3 +428,4 @@ p{
 .row{
     --bs-gutter-x: 0 !important;
 }
+
