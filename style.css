@@ -297,12 +297,12 @@ header>img{
     text-align: center;
     height: 30px;
 }
-.about-us {
+.about-Us{
     display: flex;
 }
 .about-us-image{
     text-align: center;
-    width: 47%;
+    width: 46%;
     margin-bottom: 20px;
 }
 .about-us-image>img{
@@ -311,7 +311,7 @@ header>img{
 }
 .about-us-info{
     text-align: center;
-    width: 48%;
+    width: 46%;
     padding: 2%;
 }
 .skill{
@@ -456,5 +456,8 @@ p{
     }
     .form-info{
         width: 100%;
+    }
+    .about-Us {
+        display: block;
     }
 }
