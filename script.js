@@ -40,7 +40,28 @@ const houses = [
         area: "منیریه",
         sellerName: "عباسی",
         sellerPhone: "09370379599"
-    }    
+    },
+    {
+        image: "6.jpg",
+        meterage: 40,
+        area: "فرشته",
+        sellerName: "عباسی",
+        sellerPhone: "09370379599"
+    },
+    {
+        image: "3.jpg",
+        meterage: 130,
+        area: "کرج",
+        sellerName: "احمدی",
+        sellerPhone: "09370379599"
+    },
+    {
+        image: "3.jpg",
+        meterage: 130,
+        area: "کرج",
+        sellerName: "احمدی",
+        sellerPhone: "09370379599"
+    }
 ]
 // کدهای مربوط به بخش منوی سایت
 function hide(evt, divName) {
@@ -58,9 +79,9 @@ function hide(evt, divName) {
 }
 // کدهای مربوط به نمایش آگهی ها
 const container = document.getElementById("container");
-function render(){
+function render() {
     container.innerHTML = "";
-    houses.forEach(house=>{
+    houses.forEach(house => {
         const cardDive = document.createElement("div");
         cardDive.className = "card";
         container.appendChild(cardDive);
@@ -90,38 +111,58 @@ function render(){
 render();
 // کدهای مربوط به نمایش مناطق در فیلتر
 const filterarea = document.getElementById("sidebar-right");
-function renderArea(){
-    houses.forEach(area=>{
-        const filterDiv = document.createElement("div");
-        filterDiv.className = "right-filter-container";
-        filterarea.appendChild(filterDiv);
-        const filterSelect = document.createElement("input");
-        filterSelect.type = "radio";
-        filterSelect.name = "drone"
-        filterDiv.appendChild(filterSelect);
-        const filterLabel = document.createElement("label");
-        filterLabel.className = "filter-Label";
-        filterLabel.textContent = area.area;
-        filterDiv.appendChild(filterLabel);
+let areaName = [];
+function renderArea() {
+    houses.forEach(area => {
+        let emp = true;
+        for (let i = 0; i < areaName.length; i++) {
+            if (areaName[i] === area.area) {
+                emp = false;
+            }
+        }
+        if (emp === true) {
+            areaName.push(area.area);
+            const filterDiv = document.createElement("div");
+            filterDiv.className = "right-filter-container";
+            filterarea.appendChild(filterDiv);
+            const filterSelect = document.createElement("input");
+            filterSelect.className = "locationClass";
+            filterSelect.type = "radio";
+            filterSelect.name = "drone";
+            filterSelect.value = area.area;
+            filterDiv.appendChild(filterSelect);
+            const filterLabel = document.createElement("label");
+            filterLabel.className = "filter-Label";
+            filterLabel.textContent = area.area;
+            filterDiv.appendChild(filterLabel);
+        }
+        emp = true;
     });
-    const filterButton = document.createElement("button");
-    filterButton.type = "button";
+    const filterButton = document.createElement("div");
     filterButton.className = "filter-button";
-    filterButton.textContent = "اعمال فیلتر"
+    filterButton.textContent = "اعمال فیلتر";
+    filterButton.addEventListener("click", filterLocation);
     filterarea.appendChild(filterButton);
+    const removeFilter = document.createElement("div");
+    removeFilter.className = "filter-button";
+    removeFilter.textContent = "حذف فیلتر";
+    removeFilter.addEventListener("click", removeCards);
+    removeFilter.addEventListener("click", render);
+
+    filterarea.appendChild(removeFilter);
 }
 renderArea();
 // کدهای مربوط به نمایش نام در صفحه درباره ما
 const text = document.getElementById("title");
 const words = ["فاطمه دستمالچی ساعی"];
-let wordIndex =0;
+let wordIndex = 0;
 let index = 0;
 let showCursor = true;
-function textload(){
+function textload() {
     text.textContent = words[wordIndex].substring(0, index);
-    if (index > words[wordIndex].length){
-        wordIndex +=1;
-        if (wordIndex === words.length){
+    if (index > words[wordIndex].length) {
+        wordIndex += 1;
+        if (wordIndex === words.length) {
             wordIndex = 0;
         }
         index = 0;
@@ -131,8 +172,8 @@ function textload(){
     const timer = setTimeout(textload, 200)
 }
 textload();
-setInterval(()=>{
-    if (showCursor){
+setInterval(() => {
+    if (showCursor) {
         text.style.borderRight = "";
         showCursor = false;
     } else {
@@ -142,7 +183,7 @@ setInterval(()=>{
 }, 300)
 // کدهای مربوط به اسکرول
 let mybutton = document.getElementById("myBtn");
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () { scrollFunction() };
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         mybutton.style.display = "block";
@@ -151,22 +192,69 @@ function scrollFunction() {
     }
 }
 function topFunction() {
-    setTimeout(function(){
+    setTimeout(function () {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     }, 200)
 }
 // کدهای مربوط به منوی آکاردئون در وبلاگ
 let acc = document.querySelectorAll(".accordion");
-let i;
-for (i=0; i<acc.length; i++) {
-    acc[i].addEventListener("click", function(){
+for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
         this.classList.toggle("active1");
         let panel = this.nextElementSibling;
-        if(panel.style.maxHeight) {
+        if (panel.style.maxHeight) {
             panel.style.maxHeight = null;
-        }else{
+        } else {
             panel.style.maxHeight = panel.scrollHeight + "px";
         }
     });
+}
+// کدهای مربوط به تشخیص فیلتر
+function filterLocation() {
+    removeCards();
+    let ele = document.getElementsByName('drone');
+    for (i = 0; i < ele.length; i++) {
+        if (ele[i].checked) {
+            houses.forEach(element => {
+                if (element.area === ele[i].value) {
+                    loadItem(element);
+                }
+            })
+        }
+    }
+}
+// کدهای مربوط به خالی کردن
+function removeCards() {
+    const cards = document.querySelectorAll(".card");
+    cards.forEach(element => {
+        element.remove();
+    });
+}
+// کدهای مربوط به اعمال فیلتر
+function loadItem(element) {
+    const cardDive = document.createElement("div");
+    cardDive.className = "card";
+    container.appendChild(cardDive);
+    const cardImg = document.createElement("img");
+    cardImg.src = `images/${element.image}`;
+    cardImg.alt = "image of house";
+    cardImg.className = "card-small";
+    cardDive.appendChild(cardImg);
+    const areaDive = document.createElement("div");
+    areaDive.className = "area-small";
+    areaDive.textContent = `منطقه: ${element.area}`;
+    cardDive.appendChild(areaDive);
+    const meterageDive = document.createElement("div");
+    meterageDive.className = "meterage-small";
+    meterageDive.textContent = `متراژ: ${element.meterage} متر`;
+    cardDive.appendChild(meterageDive);
+    const sellerNameDive = document.createElement("div");
+    sellerNameDive.className = "seller-small";
+    sellerNameDive.textContent = `نام فروشنده: ${element.sellerName}`;
+    cardDive.appendChild(sellerNameDive);
+    const sellerPhoneDiv = document.createElement("div");
+    sellerPhoneDiv.className = "seller-small";
+    sellerPhoneDiv.textContent = `شماره تماس فروشنده: ${element.sellerPhone}`;
+    cardDive.appendChild(sellerPhoneDiv);
 }
