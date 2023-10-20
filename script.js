@@ -38,7 +38,7 @@ const houses = [
         image: "6.jpg",
         meterage: 40,
         area: "منیریه",
-        sellerName: "جلیلی",
+        sellerName: "عباسی",
         sellerPhone: "09370379599"
     }    
 ]
