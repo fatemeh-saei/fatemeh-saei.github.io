@@ -76,8 +76,8 @@ div#container {
 }
 .navContent {
     display: none;
-    padding: 12px;
     border-top: none;
+    margin: 12px;
 }
 /* سایدبار راست و فیلتر */
 .sidebar-right{
@@ -428,6 +428,39 @@ p{
 }
 .row{
     --bs-gutter-x: 0 !important;
+}
+/* ثبت آگهی */
+.container1 button {
+    background-color: #0f633c;
+    border: solid transparent;
+    border-radius: 16px;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 13px 16px;
+    text-align: center;
+    transform: translateZ(0);
+    margin-bottom: 15px;
+}
+.container1 button:after {
+    background-clip: padding-box;
+    background-color: #198754;
+    border: solid transparent;
+    border-radius: 16px;
+    content: "";
+}
+.container1 button:hover:not(:disabled) {
+    filter: brightness(1.1);
+}
+.items-title{
+    text-align: center;
+    margin-top: 20px;
+}
+.items{
+    margin-top: 40px !important;
+}
+.my-ads-container{
+    display: flex;
+    flex-wrap: wrap;
 }
 @media only screen and (max-width: 600px) {
     .sidebar-right{
