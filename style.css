@@ -416,8 +416,9 @@ input, textarea, .form-details>button{
     color: #13142f;
     cursor: pointer;
     border-radius: 4px;
-    min-width: 4%;
-    padding-top: 10px;
+    width: 50px;
+    height: 50px;
+    padding-top: 5px;
 }
 #myBtn:hover{
     background-color: #7d7d7d;
@@ -433,13 +434,13 @@ p{
 .container1 button {
     background-color: #0f633c;
     border: solid transparent;
-    border-radius: 16px;
+    border-radius: 8px;
     color: #FFFFFF;
-    cursor: pointer;
-    padding: 13px 16px;
+    padding: 13px 30px;
     text-align: center;
     transform: translateZ(0);
     margin-bottom: 15px;
+    float: left;
 }
 .container1 button:after {
     background-clip: padding-box;
@@ -454,13 +455,25 @@ p{
 .items-title{
     text-align: center;
     margin-top: 20px;
+    color: #13142f
 }
 .items{
-    margin-top: 40px !important;
+    float: right;
+    width: calc(60% - 82px);
+    padding-bottom: 50px;
 }
 .my-ads-container{
     display: flex;
     flex-wrap: wrap;
+    padding-right: 40px;
+}
+.container1{
+    width: 40%;
+    float: right;
+    padding-left: 40px;
+    margin-right: 20px;
+    border-left: 2px solid #9e9e9e;
+    margin-bottom: 12px;
 }
 @media only screen and (max-width: 600px) {
     .sidebar-right{
@@ -493,4 +506,20 @@ p{
     .about-Us {
         display: block;
     }
+    .items{
+        width: 100%;
+    }
+    .container1{
+        width: 100%;
+    }
+    .my-ads-container{
+        padding-right: 0px;
+    }
+}
+.form-control:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    outline: 0;
+    box-shadow: 0 0 0 0 !important;
+    border: 2px solid #000000 !important;
 }

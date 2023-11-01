@@ -236,18 +236,63 @@ function loadItem(element) {
     sellerPhoneDiv.textContent = `شماره تماس فروشنده: ${element.sellerPhone}`;
     cardDive.appendChild(sellerPhoneDiv);
 }
+// کدهای مربوط به ثبت اطلاعات آگهی و تکمیل فرم
+let data = "";
+let cardDive = "";
+const form = document.querySelector("#form");
+form.addEventListener('submit', function (event) {
+    const image = document.querySelector('#image');
+    const area = document.querySelector('#area');
+    const meterage = document.querySelector('#meterage');
+    const sellerName = document.querySelector('#sellerName');
+    const sellerPhone = document.querySelector('#sellerPhone');
+    const myAds = localStorage.getItem('myAds');
+    event.preventDefault()
+    if (!image.value || !area.value || !meterage.value || !sellerName.value || !sellerPhone.value) {
+        alert("پرکردن همه فیلدها الزامی است...!");
+    } else {
+        data = {
+            id: Math.random() * 100,
+            image: image.value,
+            area: area.value,
+            meterage: meterage.value,
+            sellerName: sellerName.value,
+            sellerPhone: sellerPhone.value
+        }
+        if (myAds) {
+            const oldMyAds = JSON.parse(localStorage.getItem('myAds'));
+            localStorage.setItem('myAds', JSON.stringify([...oldMyAds, data]));
+            alert("با موفقیت ثبت شد :)");
+            renderMyAds();
+        } else {
+            localStorage.setItem('myAds', JSON.stringify([data]));
+            alert("با موفقیت ثبت شد :)");
+            renderMyAds();
+        }
+        let form = document.querySelector("#image");
+        form.value = "";
+        form = document.querySelector("#area");
+        form.value = "";
+        form = document.querySelector("#meterage");
+        form.value = "";
+        form = document.querySelector("#sellerName");
+        form.value = "";
+        form = document.querySelector("#sellerPhone");
+        form.value = "";
+    }
+})
 // کدهای مربوط به ایجاد آگهی جدید
 function renderMyAds() {
-    const myAdsContainer = document.querySelector('#my-ads-container');
-    const myAds = JSON.parse(localStorage.getItem('myAds'));
+    const myAdsContainer = document.querySelector('#my-ads-container')
+    const myAds = JSON.parse(localStorage.getItem('myAds'))
     myAdsContainer.innerHTML = "";
     myAds?.forEach(house => {
-        const cardDive = document.createElement("div");
+		const cardDive = document.createElement("div");
         cardDive.className = "card";
+        cardDive.id = Math.random() * 100;
         myAdsContainer.appendChild(cardDive);
-        const cardImg = document.createElement("img");
+        cardImg = document.createElement("img");
         cardImg.src = house.image;
-        // cardImg.src = `https://picsum.photos/200/300`;
         cardImg.alt = "image of house";
         cardImg.className = "card-small";
         cardDive.appendChild(cardImg);
@@ -267,39 +312,21 @@ function renderMyAds() {
         sellerPhoneDiv.className = "seller-small";
         sellerPhoneDiv.textContent = `شماره تماس فروشنده: ${house.sellerPhone}`;
         cardDive.appendChild(sellerPhoneDiv);
+		const removeBtn = document.createElement("button");
+        removeBtn.classList.add('delete');
+        removeBtn.textContent = "حذف آگهی";
+        removeBtn.type = "button";
+        removeBtn.onclick = () => {
+            if (confirm('این آگهی حذف شود؟')) {
+                cardDive.remove();
+                sync();
+            }
+        }
+        cardDive.appendChild(removeBtn);
     });
 }
 renderMyAds();
-// کدهای مربوط به ثبت اطلاعات آگهی و تکمیل فرم
-const form = document.querySelector("#form")
-form.addEventListener('submit', function (event) {
-    const image = document.querySelector('#image');
-    const area = document.querySelector('#area');
-    const meterage = document.querySelector('#meterage');
-    const sellerName = document.querySelector('#sellerName');
-    const sellerPhone = document.querySelector('#sellerPhone');
-    const myAds = localStorage.getItem('myAds');
-    event.preventDefault()
-    if (!image.value || !area.value || !meterage.value || !sellerName.value || !sellerPhone.value) {
-        alert("پرکردن همه فیلدها الزامی است...!");
-    } else {
-        const data = {
-            id: Math.random() * 100,
-            image: image.value,
-            area: area.value,
-            meterage: meterage.value,
-            sellerName: sellerName.value,
-            sellerPhone: sellerPhone.value
-        }
-        if (myAds) {
-            const oldMyAds = JSON.parse(localStorage.getItem('myAds'));
-            localStorage.setItem('myAds', JSON.stringify([...oldMyAds, data]));
-            alert("با موفقیت ثبت شد :)");
-            renderMyAds();
-        } else {
-            localStorage.setItem('myAds', JSON.stringify([data]));
-            alert("با موفقیت ثبت شد :)");
-            renderMyAds();
-        }
-    }
-})
+
+function sync() {
+    localStorage.setItem('myAds', JSON.stringify(data));
+}
