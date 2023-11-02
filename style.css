@@ -511,7 +511,7 @@ p{
     }
     .container1{
         width: 100%;
-        border-right: none;
+        border-left: none;
     }
     .my-ads-container{
         padding-right: 0px;
