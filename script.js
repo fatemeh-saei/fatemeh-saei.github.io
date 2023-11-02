@@ -207,6 +207,7 @@ function removeCards() {
     const cards = document.querySelectorAll(".card");
     cards.forEach(element => {
         element.remove();
+        renderMyAds();
     });
 }
 // کدهای مربوط به اعمال فیلتر
