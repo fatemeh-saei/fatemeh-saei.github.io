@@ -313,6 +313,7 @@ function renderMyAds() {
         sellerPhoneDiv.className = "seller-small";
         sellerPhoneDiv.textContent = `شماره تماس فروشنده: ${house.sellerPhone}`;
         cardDive.appendChild(sellerPhoneDiv);
+        /*
 		const removeBtn = document.createElement("button");
         removeBtn.classList.add('delete');
         removeBtn.textContent = "حذف آگهی";
@@ -324,10 +325,12 @@ function renderMyAds() {
             }
         }
         cardDive.appendChild(removeBtn);
+        */
     });
 }
 renderMyAds();
-
+/*
 function sync() {
     localStorage.setItem('myAds', JSON.stringify(data));
 }
+*/
